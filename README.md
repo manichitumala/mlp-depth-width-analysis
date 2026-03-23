@@ -1,116 +1,140 @@
-# Multilayer Perceptron Analysis: Depth, Width and Activation Functions
+# Multilayer Neural Networks: Analysis of Depth, Width, and Activation Functions
 
-## Overview
+## 📌 Overview
 
-This project investigates how key architectural choices in Multilayer Perceptrons (MLPs) influence their ability to learn complex, non-linear patterns.
+This project presents a structured tutorial and experimental analysis of multilayer perceptrons (MLPs), focusing on how architectural choices—specifically **network depth**, **network width**, and **activation functions**—influence model performance.
 
-The tutorial focuses on three main aspects:
-
-* **Network Depth** (number of hidden layers)
-* **Network Width** (number of neurons per layer)
-* **Activation Functions** (Sigmoid, Tanh, ReLU)
-
-In addition, the project demonstrates **overfitting behaviour** in high-capacity neural networks.
+Using controlled experiments on non-linear datasets, the project demonstrates how these design decisions affect **learning behaviour**, **decision boundaries**, and **generalisation ability**. The goal is to provide both theoretical understanding and practical insights that can guide effective neural network design.
 
 ---
 
-## Dataset
+## 🎯 Objectives
 
-A **synthetic spiral dataset** is used for experimentation. This dataset is highly non-linearly separable, making it ideal for analysing how neural networks learn complex decision boundaries.
-
-The dataset is generated programmatically within the notebook and split into training and testing sets (80:20).
-
----
-
-## Experiments
-
-The notebook includes the following experiments:
-
-### 1. Effect of Depth
-
-* Models with 1, 2, and 3 hidden layers are compared
-* Demonstrates how deeper networks learn more complex representations
-
-### 2. Effect of Width
-
-* Models with 4, 16, and 64 neurons per layer are evaluated
-* Shows how increasing capacity improves performance but may lead to overfitting
-
-### 3. Activation Functions
-
-* Comparison of:
-
-  * Sigmoid (`logistic`)
-  * Tanh
-  * ReLU
-* Highlights the impact of activation functions on learning efficiency
-
-### 4. Overfitting Demonstration
-
-* A large model (3 layers × 128 neurons) is used
-* Shows how excessive model complexity leads to poor generalisation
+* Analyse how increasing **depth** impacts hierarchical feature learning
+* Evaluate the effect of **width** on model capacity and flexibility
+* Compare **activation functions** (Sigmoid vs ReLU) in terms of training behaviour
+* Understand **underfitting, overfitting, and generalisation**
+* Provide practical guidelines for designing effective MLP architectures
 
 ---
 
-## Visualisation
+## 📊 Key Findings
 
-The project includes decision boundary plots for all experiments. These visualisations help illustrate:
-
-* Underfitting in simple models
-* Improved learning with increased depth and width
-* Differences between activation functions
-* Overfitting in high-capacity models
-
----
-
-## How to Run
-
-### 1. Install dependencies
-
-```bash
-pip install numpy matplotlib scikit-learn
-```
-
-### 2. Run the notebook
-
-Open:
-
-```
-ML neural networks.ipynb
-```
-
-Run all cells to reproduce results and visualisations.
+* Increasing **depth** improves the ability to learn complex representations, but shows diminishing returns beyond a certain point
+* Increasing **width** enhances flexibility but does not always lead to significant performance gains
+* **ReLU activation** enables faster convergence and more stable training compared to sigmoid
+* Model performance is strongly dependent on **dataset complexity**, not just architecture
+* A balance between **model capacity and generalisation** is essential for optimal results
 
 ---
 
-## Key Insights
-
-* Deeper networks can learn hierarchical and complex patterns more effectively
-* Wider networks increase representational capacity but may overfit
-* ReLU activation enables faster and more stable training compared to Sigmoid and Tanh
-* Overfitting occurs when model complexity is too high relative to the data
-
----
-
-## Repository Structure
+## 📁 Repository Structure
 
 ```
 mlp-depth-width-analysis/
 │
-├── ML neural networks.ipynb   # Main implementation and experiments
-├── README.md                  # Project documentation
-├── LICENSE                    # Usage license
+├── notebook/
+│   └── mlp_analysis.ipynb        # Main experiment notebook
+│
+├── images/
+│   └── decision_boundaries.png   # Generated plots (optional)
+│
+├── tutorial.pdf                 # Final tutorial submission
+├── requirements.txt             # Dependencies
+├── README.md                    # Project documentation
+└── LICENSE                      # Usage license
 ```
 
 ---
 
-## Accessibility
+## ⚙️ Installation & Setup
 
-All visualisations use colourblind-friendly colour maps to ensure readability and accessibility.
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/manichitumala/mlp-depth-width-analysis.git
+cd mlp-depth-width-analysis
+```
+
+### 2. Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 3. Run the notebook
+
+```bash
+jupyter notebook notebook/mlp_analysis.ipynb
+```
 
 ---
 
-## License
+## 🧪 Experiments Included
 
-This project is licensed under the MIT License. You are free to use, modify, and distribute this work with proper attribution.
+The Jupyter Notebook contains:
 
+### 🔹 Dataset
+
+* Synthetic non-linear dataset (e.g., spiral / moons)
+* Data normalisation and train-test split (80:20)
+
+### 🔹 Model Experiments
+
+* Depth comparison (1, 2, 3 hidden layers)
+* Width comparison (4, 16, 32 neurons per layer)
+* Activation function comparison:
+
+  * Sigmoid
+  * ReLU
+
+### 🔹 Visualisations
+
+* Decision boundary plots
+* Model behaviour comparisons
+* Performance evaluation across configurations
+
+---
+
+## 🧠 Key Concepts Demonstrated
+
+* Neural network architecture design
+* Effect of depth vs width on model capacity
+* Activation function impact on gradient flow
+* Overfitting vs underfitting
+* Importance of dataset complexity
+
+---
+
+## ♿ Accessibility
+
+* Plots include clear axis labels and readable font sizes
+* Visualisations use high-contrast, interpretable colour schemes
+* Code is structured and commented for clarity
+* Notebook is organised for step-by-step understanding
+
+---
+
+## 📚 References
+
+* Goodfellow, I., Bengio, Y., & Courville, A. (2016). *Deep Learning*. MIT Press
+* Bishop, C. M. (2006). *Pattern Recognition and Machine Learning*. Springer
+* Nielsen, M. A. (2015). *Neural Networks and Deep Learning*
+  http://neuralnetworksanddeeplearning.com/
+* Stanford University – CS231n
+  https://cs231n.stanford.edu/
+* Scikit-learn Documentation
+  https://scikit-learn.org/
+
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License**.
+You are free to use, modify, and distribute this work with proper attribution.
+
+---
+
+## 🔗 GitHub Repository
+
+https://github.com/manichitumala/mlp-depth-width-analysis.git
